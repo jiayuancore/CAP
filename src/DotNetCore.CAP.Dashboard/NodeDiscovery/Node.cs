@@ -3,6 +3,9 @@
 
 namespace DotNetCore.CAP.Dashboard.NodeDiscovery
 {
+    /// <summary>
+    /// 节点信息
+    /// </summary>
     public class Node
     {
         public string Id { get; set; }
