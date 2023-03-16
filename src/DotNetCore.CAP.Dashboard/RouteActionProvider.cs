@@ -247,7 +247,7 @@ namespace DotNetCore.CAP.Dashboard
 
             var result = await MonitoringApi.GetMessagesAsync(queryDto);
 
-            await httpContext.Response.WriteAsJsonAsync(result);
+            await httpContext.Response.WriteAsJsonAsync(result);  // 将返回的结果序列化为 JSON 格式，并作为 HTTP 响应发送回客户端。
         }
 
         public async Task ReceivedList(HttpContext httpContext)

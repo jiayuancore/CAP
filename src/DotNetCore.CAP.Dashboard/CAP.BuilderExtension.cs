@@ -24,8 +24,16 @@ namespace DotNetCore.CAP
 {
     public static class CapBuilderExtension
     {
+        // 嵌入式文件命名空间
         private const string EmbeddedFileNamespace = "DotNetCore.CAP.Dashboard.wwwroot.dist";
 
+        /// <summary>
+        /// 启用Cap仪表盘
+        /// </summary>
+        /// <param name="app"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        /// <exception cref="InvalidOperationException"></exception>
         internal static IApplicationBuilder UseCapDashboard(this IApplicationBuilder app)
         {
             if (app == null)
