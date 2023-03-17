@@ -27,7 +27,7 @@ public static class ServiceCollectionExtensions
     {
         if (setupAction == null) throw new ArgumentNullException(nameof(setupAction));
 
-        services.AddSingleton(_ => services);
+        services.AddSingleton(_ => services);  // 注册为单一实例后，允许在运行时进行动态服务注册
         services.TryAddSingleton(new CapMarkerService("CAP"));
 
         services.TryAddSingleton<ICapPublisher, CapPublisher>();
@@ -38,7 +38,7 @@ public static class ServiceCollectionExtensions
 
         services.TryAddSingleton<IConsumerRegister, ConsumerRegister>();
 
-        //Processors
+        //Processors  处理器
         services.TryAddEnumerable(
             ServiceDescriptor.Singleton<IProcessingServer, IDispatcher>(sp => sp.GetRequiredService<IDispatcher>()));
         services.TryAddEnumerable(
@@ -46,7 +46,7 @@ public static class ServiceCollectionExtensions
                 sp.GetRequiredService<IConsumerRegister>()));
         services.TryAddEnumerable(ServiceDescriptor.Singleton<IProcessingServer, CapProcessingServer>());
 
-        //Queue's message processor
+        //Queue's message processor  队列消息 处理器
         services.TryAddSingleton<MessageNeedToRetryProcessor>();
         services.TryAddSingleton<TransportCheckProcessor>();
         services.TryAddSingleton<MessageDelayedProcessor>();

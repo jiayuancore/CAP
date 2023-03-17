@@ -40,6 +40,7 @@ public class CapMarkerService
 
 /// <summary>
 /// Used to verify cap storage extension was added on a ServiceCollection
+/// 用于验证在ServiceCollection上添加了Marker存储扩展
 /// </summary>
 public class CapStorageMarkerService
 {
@@ -61,6 +62,7 @@ public class CapStorageMarkerService
 
 /// <summary>
 /// Used to verify cap message queue extension was added on a ServiceCollection
+/// 用于验证在ServiceCollection上添加了cap消息队列扩展名
 /// </summary>
 public class CapMessageQueueMakerService
 {
@@ -82,6 +84,7 @@ public class CapMessageQueueMakerService
 
 /// <summary>
 /// Allows fine grained configuration of CAP services.
+/// 允许细粒度配置CAP服务。
 /// </summary>
 public sealed class CapBuilder
 {
@@ -122,6 +125,7 @@ public sealed class CapBuilder
 
     /// <summary>
     /// Registers subscribers from the specified types.
+    /// 注册指定类型的订阅者。
     /// </summary>
     /// <param name="handlerAssemblyMarkerTypes"></param>
     public CapBuilder AddSubscriberAssembly(params Type[] handlerAssemblyMarkerTypes)

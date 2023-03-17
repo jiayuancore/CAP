@@ -10,6 +10,7 @@ namespace DotNetCore.CAP.Internal;
 /// <inheritdoc />
 /// <summary>
 /// A process thread abstract of message process.
+/// 消息进程的进程线程抽象
 /// </summary>
 public interface IProcessingServer : IDisposable
 {
